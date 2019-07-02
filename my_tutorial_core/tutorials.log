@@ -1,0 +1,143 @@
+>>>>> Starting development server at http://None/ <<<<<
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+>>>>> Starting development server at http://None/ <<<<<
+ * Debugger is active!
+ * Debugger PIN: 610-781-048
+127.0.0.1 - - [01/Jul/2019 16:51:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 16:51:31] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 16:51:31] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 16:51:31] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 16:51:31] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 16:51:31] "GET /swagger.json HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 16:51:31] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 16:51:50] "GET /Tutorial/ HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 16:51:57] "GET /Tutorial/ HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 16:51:57] "GET /Tutorial/ HTTP/1.1" 200 -
+An unhandled exception occurred.
+Traceback (most recent call last):
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: NOT NULL constraint failed: tutorial.description
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask_restplus/marshalling.py", line 136, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/my_tutorial_core/controller/tutorial.py", line 23, in post
+    return self.service.add(api.payload['title'])
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/my_tutorial_core/service/tutorial/service.py", line 10, in add
+    db.session.commit()
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 1027, in commit
+    self.transaction.commit()
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 494, in commit
+    self._prepare_impl()
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 473, in _prepare_impl
+    self.session.flush()
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2459, in flush
+    self._flush(objects)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2597, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 154, in reraise
+    raise value
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/session.py", line 2557, in _flush
+    flush_context.execute()
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/persistence.py", line 1138, in _emit_insert_statements
+    statement, params
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 399, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value.with_traceback(tb)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: tutorial.description
+[SQL: INSERT INTO tutorial (title, description) VALUES (?, ?)]
+[parameters: ('Test', None)]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+127.0.0.1 - - [01/Jul/2019 16:52:20] "POST /Tutorial/ HTTP/1.1" 500 -
+>>>>> Starting development server at http://None/ <<<<<
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+>>>>> Starting development server at http://None/ <<<<<
+ * Debugger is active!
+ * Debugger PIN: 610-781-048
+>>>>> Starting development server at http://None/ <<<<<
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+>>>>> Starting development server at http://None/ <<<<<
+ * Debugger is active!
+ * Debugger PIN: 610-781-048
+127.0.0.1 - - [01/Jul/2019 17:32:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 17:32:39] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 17:32:39] "GET /swagger.json HTTP/1.1" 200 -
+ * Detected change in '/home/gmasetto/PycharmProjects/my_tutorial_core/my_tutorial_core/service/tutorial/service.py', reloading
+ * Restarting with stat
+>>>>> Starting development server at http://None/ <<<<<
+ * Debugger is active!
+ * Debugger PIN: 610-781-048
+>>>>> Starting development server at http://None/ <<<<<
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+>>>>> Starting development server at http://None/ <<<<<
+ * Debugger is active!
+ * Debugger PIN: 610-781-048
+127.0.0.1 - - [01/Jul/2019 17:34:33] "POST /Tutorial/ HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 17:34:57] "GET /Tutorial/ HTTP/1.1" 200 -
+127.0.0.1 - - [01/Jul/2019 17:35:22] "GET /Tutorial/1 HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/flask_restplus/marshalling.py", line 136, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/my_tutorial_core/controller/tutorial.py", line 36, in get
+    return self.service.get_by_id(id)
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/my_tutorial_core/service/tutorial/service.py", line 17, in get_by_id
+    return Tutorial.query.filter(Tutorial.id == id).one()
+  File "/home/gmasetto/PycharmProjects/my_tutorial_core/.venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3289, in one
+    raise orm_exc.NoResultFound("No row was found for one()")
+sqlalchemy.orm.exc.NoResultFound: No row was found for one()
+
+127.0.0.1 - - [01/Jul/2019 17:35:27] "GET /Tutorial/2 HTTP/1.1" 404 -
